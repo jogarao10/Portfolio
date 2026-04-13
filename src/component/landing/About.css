@@ -1,0 +1,122 @@
+.about {
+  background: radial-gradient(circle at 70% 45%, rgba(53, 247, 243, 0.2), transparent 42%),
+    radial-gradient(circle at 75% 45%, rgba(196, 90, 255, 0.18), transparent 54%),
+    #021b35;
+  color: #f3f9ff;
+  margin-top: -2px;
+  padding: 90px 0 100px;
+  scroll-margin-top: 90px;
+}
+
+.about__inner {
+  width: min(920px, 92%);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.about__title {
+  margin: 0;
+  font-size: clamp(40px, 4vw, 62px);
+  line-height: 1.05;
+}
+
+.about__title span {
+  color: #39eff4;
+}
+
+.about__subtitle {
+  margin: 16px 0 20px;
+  font-size: clamp(28px, 2.3vw, 38px);
+}
+
+.about__text {
+  margin: 0;
+  font-size: clamp(18px, 1.35vw, 24px);
+  line-height: 1.55;
+  color: #d7ebff;
+}
+
+.about__text--extra {
+  margin-top: 16px;
+}
+
+.about__content {
+  text-align: center;
+}
+
+.about__content > * {
+  opacity: 0;
+  animation: aboutRevealUp 0.9s ease-out both;
+}
+
+.about__title {
+  animation-delay: 0.08s;
+}
+
+.about__subtitle {
+  animation-delay: 0.2s;
+}
+
+.about__text {
+  animation-delay: 0.32s;
+}
+
+.about__text--extra {
+  animation-delay: 0.44s;
+}
+
+.about__btn {
+  margin-top: 34px;
+  border: 1px solid rgba(57, 239, 244, 0.78);
+  background-color: #39eff4;
+  background-image: linear-gradient(180deg, #54f8ff 0%, #2ae5ee 100%);
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  line-height: 1;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(57, 239, 244, 0.92), 0 0 24px rgba(57, 239, 244, 0.52),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: transform 0.24s ease, box-shadow 0.24s ease, filter 0.24s ease;
+  animation-delay: 0.56s;
+}
+
+.about__btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+  box-shadow: 0 0 16px rgba(57, 239, 244, 1), 0 0 32px rgba(57, 239, 244, 0.62),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+@media (max-width: 900px) {
+  .about {
+    padding: 62px 0 68px;
+  }
+
+  .about__text {
+    font-size: 18px;
+  }
+}
+
+@keyframes aboutRevealUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about__content > * {
+    animation: none;
+    opacity: 1;
+  }
+}

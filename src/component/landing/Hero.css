@@ -1,0 +1,503 @@
+
+.hero {
+  background: radial-gradient(circle at 70% 45%, rgba(53, 247, 243, 0.2), transparent 42%),
+    radial-gradient(circle at 75% 45%, rgba(196, 90, 255, 0.18), transparent 54%),
+    #021b35;
+  color: #f5fbff;
+  min-height: calc(100vh - 84px);
+  padding: clamp(60px, 10vh, 110px) 0 78px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  scroll-margin-top: 90px;
+}
+
+.hero__inner {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero__content {
+  max-width: 680px;
+  text-align: center;
+}
+
+.hero__motion-clip {
+  overflow: hidden;
+}
+
+.hero__motion-clip--role {
+  margin: 10px 0 20px;
+}
+
+.hero__motion-clip--description {
+  margin: 0;
+}
+
+.hero__greeting {
+  margin: 0 0 10px;
+  font-size: 30px;
+  font-weight: 700;
+  opacity: 0;
+  animation: dropIn 2.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+}
+
+.hero__name {
+  margin: 0;
+  font-size: 48px;
+  line-height: 1.05;
+  opacity: 0;
+  animation: slideInLeft 2.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+}
+
+.hero__role {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  opacity: 0;
+  animation: riseIn 2.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.hero__typing-text {
+  color: #39eff4;
+}
+
+.hero__role-prefix {
+  color: #f5fbff;
+  display: inline-block;
+  transform: translateX(32px);
+}
+
+.hero__typing-frame {
+  width: 25ch;
+  overflow: hidden;
+  text-align: left;
+  flex: 0 0 25ch;
+  transform: translateX(32px);
+}
+
+.hero__typing-text {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  animation: typing 3s steps(25, end) 1.8s both;
+}
+
+.hero__typing-text::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: #39eff4;
+  animation: caretDuringTyping 3s steps(1, end) 1.8s both;
+}
+
+.hero__description {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.45;
+  color: #cee9ff;
+  opacity: 0;
+  animation: slideInRight 2.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+}
+
+.hero__socials {
+  display: flex;
+  gap: 16px;
+  margin-top: 28px;
+  justify-content: center;
+  opacity: 0;
+  animation: slideInRight 2.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+}
+
+.hero__socials a {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 2px solid #30e4ef;
+  color: #30e4ef;
+  text-decoration: none;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: transform 0.24s ease, box-shadow 0.24s ease, color 0.24s ease;
+}
+
+.hero__socials a:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 0 16px rgba(48, 228, 239, 0.45);
+  color: #8ffbff;
+}
+
+.hero__socials a svg {
+  width: 18px;
+  height: 18px;
+}
+
+.hero__image-wrap {
+  display: flex;
+  justify-content: center;
+  animation: revealRight 2.8s ease-out 0.35s both;
+}
+
+.hero__image-ring {
+  width: clamp(240px, 30vw, 420px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  padding: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #3cf0f7, #ffffff 40%, #ce65ff);
+  box-shadow: 0 0 32px rgba(55, 240, 247, 0.5), 0 0 65px rgba(206, 101, 255, 0.35);
+  animation: floatY 4.2s ease-in-out infinite, glowPulse 3.2s ease-in-out infinite;
+}
+
+@media (max-width: 1200px) and (min-width: 901px) {
+  .hero {
+    min-height: auto;
+    padding: 28px 0 44px;
+  }
+
+  .hero__inner {
+    width: min(980px, 94%);
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 22px;
+  }
+
+  .hero__content {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .hero__greeting {
+    font-size: clamp(24px, 2.8vw, 34px);
+  }
+
+  .hero__name {
+    font-size: clamp(34px, 4.4vw, 52px);
+  }
+
+  .hero__role {
+    font-size: clamp(23px, 2.8vw, 32px);
+    justify-content: flex-start;
+  }
+
+  .hero__role-prefix {
+    transform: none;
+  }
+
+  .hero__typing-frame {
+    transform: none;
+  }
+
+  .hero__description {
+    font-size: clamp(16px, 1.5vw, 20px);
+    max-width: 34ch;
+  }
+
+  .hero__socials {
+    justify-content: flex-start;
+  }
+
+  .hero__image-wrap {
+    justify-content: flex-end;
+  }
+
+  .hero__image-ring {
+    width: clamp(200px, 23vw, 255px);
+  }
+
+  .hero__image {
+    object-position: center 16%;
+  }
+}
+
+.hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Bias crop toward the top of the photo so hair stays inside the circle */
+  object-position: center 12%;
+  border-radius: 50%;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: auto;
+    padding: 14px 0 40px;
+    overflow-x: hidden;
+    align-items: flex-start;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    justify-items: center;
+  }
+
+  .hero__content {
+    order: 2;
+    max-width: 100%;
+    width: 100%;
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero__image-wrap {
+    order: 1;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero__image-ring {
+    width: clamp(170px, 56vw, 235px);
+  }
+
+  .hero__greeting {
+    font-size: clamp(20px, 5.5vw, 28px);
+  }
+
+  .hero__name {
+    font-size: clamp(28px, 8.2vw, 38px);
+    line-height: 1.12;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .hero__role {
+    font-size: clamp(20px, 6.6vw, 30px);
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    white-space: normal;
+    row-gap: 2px;
+    max-width: 100%;
+  }
+
+  .hero__description {
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 32ch;
+  }
+
+  .hero__role-prefix,
+  .hero__typing-frame {
+    transform: none;
+  }
+
+  .hero__typing-frame {
+    width: max-content;
+    flex: 0 0 auto;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .hero__typing-text {
+    max-width: 100%;
+    animation: typingFluid 3s steps(25, end) 1.8s both;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__inner {
+    width: 94%;
+    gap: 12px;
+  }
+
+  .hero {
+    padding-top: 12px;
+  }
+
+  .hero__image-ring {
+    width: clamp(165px, 58vw, 220px);
+  }
+
+  .hero__name {
+    font-size: clamp(24px, 8vw, 34px);
+  }
+
+  .hero__role {
+    font-size: clamp(17px, 5.8vw, 24px);
+  }
+
+  .hero__typing-frame {
+    width: max-content;
+    flex-basis: auto;
+  }
+
+  .hero__description {
+    max-width: 30ch;
+  }
+}
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-90px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(90px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-90px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(90px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes revealRight {
+  from {
+    opacity: 0;
+    transform: translateX(70px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 25ch;
+  }
+}
+
+@keyframes typingFluid {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes caretDuringTyping {
+  0%,
+  12%,
+  24%,
+  36%,
+  48%,
+  60%,
+  72%,
+  84% {
+    opacity: 1;
+  }
+  6%,
+  18%,
+  30%,
+  42%,
+  54%,
+  66%,
+  78%,
+  90%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 32px rgba(55, 240, 247, 0.45), 0 0 65px rgba(206, 101, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 42px rgba(55, 240, 247, 0.65), 0 0 78px rgba(206, 101, 255, 0.45);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__greeting,
+  .hero__name,
+  .hero__role,
+  .hero__description,
+  .hero__socials,
+  .hero__image-wrap,
+  .hero__image-ring {
+    animation: none;
+    opacity: 1;
+  }
+
+  .hero__socials a {
+    transition: none;
+  }
+
+  .hero__typing-text {
+    width: 25ch;
+  }
+
+  .hero__typing-text::after {
+    display: none;
+  }
+}

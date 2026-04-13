@@ -1,0 +1,60 @@
+.contact {
+  background: radial-gradient(circle at 18% 30%, rgba(53, 247, 243, 0.12), transparent 46%),
+    radial-gradient(circle at 82% 72%, rgba(196, 90, 255, 0.12), transparent 48%),
+    #03142f;
+  color: #f3f9ff;
+  margin-top: -2px;
+  padding: 86px 0 100px;
+  scroll-margin-top: 90px;
+}
+
+.contact__inner {
+  width: min(940px, 92%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact__eyebrow {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #8ff8ff;
+}
+
+.contact__title {
+  margin: 0;
+  font-size: clamp(34px, 3.8vw, 52px);
+  line-height: 1.08;
+}
+
+.contact__text {
+  margin: 16px auto 0;
+  max-width: 58ch;
+  line-height: 1.55;
+  color: #cde6ff;
+  font-size: clamp(16px, 1.2vw, 19px);
+}
+
+.contact__mail {
+  margin: 28px auto 0;
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(57, 239, 244, 0.4);
+  background: rgba(6, 33, 62, 0.78);
+  color: #dff4ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+}
+
+.contact__mail:hover {
+  transform: translateY(-2px);
+  border-color: rgba(57, 239, 244, 0.72);
+  box-shadow: 0 0 20px rgba(57, 239, 244, 0.25);
+}

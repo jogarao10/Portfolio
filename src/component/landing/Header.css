@@ -1,0 +1,236 @@
+.site-header {
+  background: #00113a;
+  color: #ffffff;
+  padding: 16px 0;
+  animation: headerDrop 0.6s ease-out both;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.site-header__inner {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.site-header__top-row {
+  display: flex;
+  align-items: center;
+}
+
+.site-header__brand {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  line-height: 1;
+  animation: fadeUp 0.6s ease-out 0.2s both;
+}
+
+.site-header__menu-btn {
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 4px 0 4px 10px;
+  cursor: pointer;
+}
+
+.site-header__menu-btn span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #ffffff;
+  margin: 5px 0;
+  transition: transform 0.28s ease, opacity 0.28s ease;
+}
+
+.site-header__menu-btn.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.site-header__menu-btn.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.site-header__menu-btn.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.site-header__nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.site-header__nav-list li {
+  opacity: 0;
+  animation: navRiseSettle 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.site-header__nav-list li:nth-child(1) {
+  animation-delay: 0.35s;
+}
+
+.site-header__nav-list li:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.site-header__nav-list li:nth-child(3) {
+  animation-delay: 0.65s;
+}
+
+.site-header__nav-list li:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.site-header__nav-list li:nth-child(5) {
+  animation-delay: 0.95s;
+}
+
+.site-header__nav-list li:nth-child(6) {
+  animation-delay: 1.1s;
+}
+
+.site-header__nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: capitalize;
+  display: inline-block;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.site-header__nav-link:hover {
+  color: #5ef8ff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1200px) and (min-width: 901px) {
+  .site-header__inner {
+    width: min(1060px, 94%);
+  }
+
+  .site-header__brand {
+    font-size: 22px;
+  }
+
+  .site-header__nav-list {
+    gap: 26px;
+  }
+
+  .site-header__nav-link {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    padding: 12px 0;
+  }
+
+  .site-header__inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .site-header__top-row {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .site-header__brand {
+    font-size: 24px;
+  }
+
+  .site-header__menu-btn {
+    display: inline-block;
+  }
+
+  .site-header__nav-list {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding-top: 4px;
+  }
+
+  .site-header__nav-list.is-open {
+    display: flex;
+    animation: mobileMenuIn 0.3s ease-out both;
+  }
+
+  .site-header__nav-link {
+    font-size: 17px;
+  }
+}
+
+@keyframes headerDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes navRiseSettle {
+  0% {
+    opacity: 0;
+    transform: translateY(34px);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mobileMenuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header,
+  .site-header__brand,
+  .site-header__nav-list li,
+  .site-header__nav-list.is-open {
+    animation: none;
+  }
+
+  .site-header__menu-btn span,
+  .site-header__nav-link {
+    transition: none;
+  }
+}
